@@ -18,10 +18,11 @@ $(document).ready(function(){
 
   return array;
 }
+ var new_array = shuffle(my_array);
   for(i in my_array){
-    $('#card_holder').append('<div class="card"><p>'+i+'</p></div>');
+    $('#card_holder').append('<div class="card"><p>'+my_array(i)+'</p></div>');
   };
     $('card').click(function(){
-      $(this). find("p").css("opacity,1");
-      $(this).html()
+      $(this).find("p").css("opacity, 1");
+      $(this).html();
        }
