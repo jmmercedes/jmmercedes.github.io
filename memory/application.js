@@ -1,46 +1,51 @@
 $(document).ready(function(){
-  var click_count = 0;
-  var myarray = ["1","1","2","2","3","3","4","4","5","5","6","6","7","7","8","8","9","9","10","10"];
-  for(i in myarray){
-    $('#card_holder').append('<div class="card"><p>'+ myarray[i]+'</p></div>');
-  } 
+  var my_array = ["one", "one", "two", "two", "three", "three", "four", "four", "five", "five", "six", "six", "seven", "seven", "eight", "eight", "nine", "nine","ten","ten"];
   function shuffle(array) {
-  var currentIndex = array.length, temporaryValue, randomIndex ;
+    var counter = array.length, temp, index;
 
-  // While there remain elements to shuffle...
-  while (0 !== currentIndex) {
+    // While there are elements in the array
+    while (counter > 0) {
+        // Pick a random index
+        index = Math.floor(Math.random() * counter);
 
-    // Pick a remaining element...
-    randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex -= 1;
+        // Decrease counter by 1
+        counter--;
 
-    // And swap it with the current element.
-    temporaryValue = array[currentIndex];
-    array[currentIndex] = array[randomIndex];
-    array[randomIndex] = temporaryValue;
-  }
+        // And swap the last element with it
+        temp = array[counter];
+        array[counter] = array[index];
+        array[index] = temp;
+    }
 
-  return array;
+    return array;
 }
-var my_array = shuffle(my_array);
-  //$(this).css("border","1px");
-    $('.card').on("click", function(){
-        if(click_count == 0) {
-            $(this).find('p').css('opacity', 1).addClass('clicked');
-            value1=$(this).find('p').html();
-            click_count=1;
-        }
-        else{
-            $(this).find('p').css('opacity', 1).addClass('clicked');
-            value2=$(this).find('p').html();
-            click_count=0;
-            if(value1 == value2){
-              $('.clicked').css('opacity', 1).removeClass('clicked').addClass('correct');
-            }
-            else{
-                $('.clicked').css('opacity', 0).removeClass('clicked');
-            }
-        }
-    })
-
-});
+  var new_array=shuffle(my_array);
+  var first_click = "a";
+  var second_click = "a";
+  var click_count = 0;
+  for(i in my_array){
+    $('#card_holder').append('<div class="card"><p>'+my_array[i]+'</p></div>');
+  }
+  $('.card').click(function(){
+    if(click_count == 0){
+    $(this).find('p').css("opacity", 1);
+    $(this).find('p').addClass('clicked');
+    first_click = $(this).find('p').html();
+    click_count = 1;
+    }
+    else {
+    $(this).find('p').css("opacity", 1);
+    $(this).find('p').addClass('clicked');
+    second_click = $(this).find('p').html();
+    click_count = 0;
+      if (first_click == second_click){
+        $('.clicked').css("opacity", 1).removeClass('clicked');
+      }
+      else {
+        setTimeout(function(){$('.clicked').css('opacity', '0').removeClass('clicked')}, 500);
+      }
+      click_count = 0;
+    }
+    
+  })
+})
