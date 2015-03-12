@@ -22,6 +22,7 @@ $(document).ready(function(){
 
   return array;
 }
+var my_array = shuffle(my_array);
   //$(this).css("border","1px");
     $('.card').on("click", function(){
         if(click_count == 0) {
