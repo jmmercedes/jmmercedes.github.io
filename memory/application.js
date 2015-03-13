@@ -2,6 +2,7 @@ $(document).ready(function(){
   var my_array = ["cow", "cow", "pig", "pig", "chicken", "chicken", "horse", "horse", "dog", "dog", "cat", "cat", "mouse", "mouse", "rabbit", "rabbit", "fox", "fox","wolf","wolf",];
   function shuffle(array) {
     var counter = array.length, temp, index;
+    // This is to list what will be on the cards
 
     // While there are elements in the array
     while (counter > 0) {
@@ -19,6 +20,7 @@ $(document).ready(function(){
 
     return array;
 }
+// This part was to shuufle the cards randomly to make the game as realistic as possible
   var new_array=shuffle(my_array);
   var first_click = "a";
   var second_click = "a";
@@ -46,6 +48,7 @@ $(document).ready(function(){
       }
       click_count = 0;
     }
-    
+    // This allowed the animal names to show up
   })
 })
+// My next step would be to add pictures on to the cards
