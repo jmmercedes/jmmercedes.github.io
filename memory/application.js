@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  var my_array = ["one", "one", "two", "two", "three", "three", "four", "four", "five", "five", "six", "six", "seven", "seven", "eight", "eight", "nine", "nine","ten","ten"];
+  var my_array = ["1", "1", "2", "2", "3", "3", "4", "4", "5", "5", "6", "6", "7", "8", "8", "9", "9", "10","10","11","11"];
   function shuffle(array) {
     var counter = array.length, temp, index;
 
