@@ -4,7 +4,7 @@ $('#add').on("click", function(){
   var value=$('input').val();
  $('#1').append("<p>"+value+"</p>"); 
      });
-$('#delete').on("click", function(){
+$('#clear').on("click", function(){
   $('input').val();
   $('#1').empty(); 
      });
