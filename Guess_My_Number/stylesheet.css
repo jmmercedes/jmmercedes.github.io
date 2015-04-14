@@ -6,12 +6,12 @@ input, button {
 }
 
 #input_holder {
-  width: 225px;
+  width: 235px;
   margin: 0 auto;
 }
 
 #feedback {
-  height: 32px;
+  height: 30px;
 }
 
 #guess_counter{
